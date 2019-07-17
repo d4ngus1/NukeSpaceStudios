@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 329882927}
   - component: {fileID: 329882930}
   m_Layer: 0
-  m_Name: RopeAnchor
+  m_Name: Rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73673fea9e03f4c4ea5f2838e33254bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchor: {fileID: 329882926}
+  anchor: {fileID: 650521570}
   chainSprite: {fileID: 536659244778723809, guid: 4131b934a0dacfa4db6f818419c9ed22,
     type: 3}
   chains: 6
@@ -275,6 +275,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &650521570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 536659244778723809, guid: 4131b934a0dacfa4db6f818419c9ed22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1775417913663070088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &650521571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7045440884410128805, guid: 4131b934a0dacfa4db6f818419c9ed22,
@@ -566,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 536659244778723809, guid: 4131b934a0dacfa4db6f818419c9ed22,
         type: 3}
       propertyPath: m_Name
-      value: chain
+      value: StartChain
       objectReference: {fileID: 0}
     - target: {fileID: 7045440884410128805, guid: 4131b934a0dacfa4db6f818419c9ed22,
         type: 3}
