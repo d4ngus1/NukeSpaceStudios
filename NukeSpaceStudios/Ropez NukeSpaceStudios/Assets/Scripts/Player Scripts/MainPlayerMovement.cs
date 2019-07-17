@@ -26,15 +26,35 @@ public class MainPlayerMovement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        while (rb.velocity.x < maxRunningSpeed)
+        Transform collider = collision.GetComponent<Transform>();
+        if (collision.CompareTag("Start"))
         {
-            rb.velocity = new Vector2(vSpeed += runningIncreaseSpeed, 0);
-            currentPlayerState = "Running";
+            while (rb.velocity.x < maxRunningSpeed)
+            {
+                rb.velocity = new Vector2(vSpeed += runningIncreaseSpeed, 0);
+                currentPlayerState = "Running";
+            }
+        }
+        else if (collision.CompareTag("Rope"))
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                transform.SetParent(collider);
+                rb.simulated = false;
+            }
+            else
+            {
+                gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+                rb.simulated = true;
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        rb.velocity = new Vector2(vSpeed, jumpPower);
+        if (collision.CompareTag("Start"))
+        {
+            rb.velocity = new Vector2(vSpeed, jumpPower);
+        }
     }
 }
